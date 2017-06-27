@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('@{fa-font-path}/fontawesome-webfont.eot?v=@{fa-version}');
+  src: url('@{fa-font-path}/fontawesome-webfont.eot?#iefix&v=@{fa-version}') format('embedded-opentype'),
+    url('@{fa-font-path}/fontawesome-webfont.woff2?v=@{fa-version}') format('woff2'),
+    url('@{fa-font-path}/fontawesome-webfont.woff?v=@{fa-version}') format('woff'),
+    url('@{fa-font-path}/fontawesome-webfont.ttf?v=@{fa-version}') format('truetype'),
+    url('@{fa-font-path}/fontawesome-webfont.svg?v=@{fa-version}#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa() {
+  font-family: FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0); // ensures no half-pixel rendering in firefox
+}
+
+.fa-icon(@size, @padding, @background, @foreground : white) {
+    .fa();
+    background-color: @background;
+    color: @foreground;
+
+    border-radius: @border-radius-circle;
+    float: left;
+
+    width: @size;
+    height: @size;
+    padding: @padding;
+
+    text-align: center;
+    line-height: @size;
+
+    font-size: @size - @padding;
+}
+
+
+.fa-li() {
+  .fa();
+  padding-right: @padding-large-horizontal;
+}
+
+.set-li-icon(@li-name, @content) {
+  .@{li-name} {
+    padding-left: @padding-base-horizontal + @font-size-base;
+  }
+
+  .@{li-name}::before {
+    .fa();
+    content: @content;
+    width: @padding-base-horizontal + @font-size-base;
+    margin-left: -@padding-base-horizontal - @font-size-base;
+    display: inline-block;
+  }
+}

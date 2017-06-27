@@ -1,0 +1,47 @@
+extends ./layout.jade
+include ../mixins/util.jade
+
+block title
+  title= resume_title
+
+block style
+  link(rel='stylesheet', href="index.css")
+
+block header
+  header.row
+    figure.header-qrcode
+      +responsive("qrcode", contact.wechat, "invisible-lt-sm")
+    section.title
+      h1= name
+      h2= job_description.join("/")
+    address
+      ul.contact
+        +phone(contact.phone)
+        +email(contact.email)
+        +github(contact.github)
+        +responsive("wechat", contact.wechat, "visible-lt-sm")
+
+block content
+  article.content.row
+    article.column-5.first.column
+      block education
+      block language
+      block experience
+    article.column-7.last.column
+      block skills
+
+
+block footer
+  footer
+    block repo
+
+
+block sidebar
+  aside
+    block links
+
+block IEcondition
+    <!--[if lte IE 8]>
+    .lte-ie8-comment-wrapper
+      p.lte-ie8-comment #{lt_ie8_comment}
+    <![endif]-->

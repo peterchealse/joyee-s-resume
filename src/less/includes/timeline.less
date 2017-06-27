@@ -1,0 +1,67 @@
+.fa-timeline-icon(@content) {
+    .fa-icon(@timeline-item-size, @timeline-item-padding, @bright-color);
+
+    content: @content;
+    margin-left: -@timeline-item-size - @timeline-item-size / 2 - @timeline-item-padding - @timeline-line-width / 2;
+    margin-top: -@timeline-item-padding;
+}
+
+.timeline-wrapper {
+    .float-container();
+    margin-top: -@timeline-icon-overlap;
+}
+
+.timeline-wrapper::after {
+    .fa-icon(@timeline-end-size, 0, @text-color);
+
+    content: "";
+    margin-left: @timeline-icon-radius - @timeline-end-size / 2 + @timeline-line-width / 2;
+    margin-top: -@timeline-end-size / 2;
+}
+
+.timeline {
+    padding-top: @timeline-icon-overlap + @timeline-item-size / 2;
+    padding-left: @timeline-item-size;
+    border-left: @timeline-line-width solid @text-color;
+    margin: 0 0 0 @timeline-icon-radius;
+}
+
+.timeline li {
+    list-style-type: none;
+}
+
+.timeline-item {
+    padding-bottom: @timeline-end-size;
+}
+
+.timeline-title {
+    margin: 0 0 0 -@timeline-item-size;
+    padding: @timeline-item-padding/2 @timeline-item-size;
+    color: white;
+    background-color: @text-color;
+    border-radius: @border-radius-large;
+    font-weight: normal;
+    font-size: @font-size-base;
+    // hack: make floating boxes align vertically
+    line-height: @line-height-large;
+    .float-container();
+}
+
+.timeline-item::before {
+    .fa-timeline-icon(@fa-var-book);  //catch-all
+    position: absolute;
+}
+
+.timeline-content {
+    margin: 0;
+
+    @media (max-width: @screen-xs-max) {
+      margin-left: -@padding-small-horizontal;
+    }
+}
+
+.set-timeline-icon(@item-name, @content) {
+    .@{item-name}.timeline-item::before {
+        content: @content;
+    }
+}

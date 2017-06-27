@@ -1,0 +1,194 @@
+{
+    "data_lang": "zh-CN",
+    "ga_id": "UA-63818301-2",
+    "resume_title": "王- 个人简历",
+    "name": "xxx",
+    "repo": "",
+    "job_description": ["前端工程师"],
+    "contact": {
+        "phone": "xxxx",
+        "email": "xxxxx",
+        "wechat": {
+            "id": "",
+            "qrcode": "static/we.png"
+        },
+        "sinaweibo": {
+            "id": "",
+            "url": " "
+        },
+        "github": {
+            "id": "xxxxx"
+        },
+        "blog": {
+            "url": " "
+        }
+    },
+    "links": [
+        {
+            "type": "repo",
+            "url": "https://github.com/xxx"
+
+        },
+        {
+            "type": "pdf",
+            "url": " "
+
+        },
+        {
+            "type": "zhihu",
+            "url": " "
+        },
+        {
+            "type": "doubanbook",
+            "url": " "
+        }
+    ],
+    "education": [
+        {
+            "type": "undergraduate",
+            "name": "南京邮电大学",
+            "major": "计算机应用技术",
+            "start": "2007",
+            "end": "2011",
+            "honor": [
+                "xxxx"
+            ]  
+        },
+        {
+            "type": "master",
+            "name": "xxx",
+            "major": "xxx",
+            "start": "2013",
+            "end": "2016",
+            "honor": [
+                "xxx"
+            ]  
+        }
+    ],
+    "language": [
+        {
+            "type": "english",
+            "certificate": [
+                {
+                    "type": "CET-4",
+                    "full": "750",
+                    "score": "501"
+                },
+                {
+                    "type": "CET-6",
+                    "full": "750",
+                    "score": "488"
+                }
+            ],
+            "description": [
+                "能流畅阅读英文论文、github、stackoverflow"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "type": "internship",
+            "techtype": "frontend",
+            "place": "xxx",
+            "start": "2014.03",
+            "end": "2016.05",
+            "name": "工作内容：",
+            "description": [
+                "基于UI设计图，使用`bootstrap`、`jQuery`等进行静态页面的实现",
+                "与后端协作并基于`ajax`进行动态页面的开发",
+                "基于`reactJS`,`easyui`进行组件化开发",
+                "推动业务及产品相关的生态组件库的建设以提高开发效率"
+            ],
+            "stack": ["reactJS", "webpack"]
+        },
+        {
+            "type": "project",
+            "techtype": "frontend",
+            "place": "xxx",
+            "start": "2014.03",
+            "end": "2016.05",
+            "name": "包含以下模块：",
+            "description": [
+                "xx",
+                "xx",
+                "xx",
+                "xx"
+            ],
+            "stack": ["reactJS", "webpack"]
+        }
+    ],
+    "skills": [
+        {
+            "type": "frontend",
+            "item": [
+                {
+                    "summary": "熟悉 `HTML` / `CSS`",
+                    "description": [
+                        "能够编写语义化的 `HTML`，模块化的 `CSS`",
+                        "熟悉 `过渡` / `变换` / `媒体查询`  等css3特性",
+                        "了解已标准化的 `HTML5` / `CSS3` 新特性",
+                        "熟悉响应式设计"
+                    ]
+                },
+                {
+                    "summary": "熟悉 `JavaScript`",
+                    "description": [
+                        "熟悉 `amd`、`cmd`及`commonjs`、`面向对象`的 JavaScript",
+                        "了解 `原型模式` / `构造函数模式` 等javascript常见 `设计模式`",
+                        "熟悉`ES6`,`reactJS`,`nodejs`"
+                    ]
+                },
+                {
+                    "summary": "熟悉 `DOM` / `BOM`",
+                    "description": [
+                        "了解原生 `DOM` 与 `BOM`",
+                        "了解 `DOM事件流`"
+                    ]
+                },
+                {
+                    "summary": "熟悉 `jQuery` / `jQuery UI` / `Bootstrap`",
+                    "description": [
+                        "了解jQuery基本使用与扩展插件，能为项目进行定制",
+                        "阅读过部分源代码，了解其设计思路与部分实现细节"
+                    ]
+                },
+                {
+                    "summary": "其他",
+                    "description": [
+                        "有 `Gulp` / `webpack` 使用经验",
+                        "了解常见的前端开发规范，了解基本的前端性能优化知识",
+                        "关注前沿前端知识，并持续学习"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "backend",
+            "item": [
+                {
+                    "summary": "熟悉 `java`,`php`",
+                    "description": [
+                        
+                    ]
+                },
+                
+                {
+                    "summary": "其他",
+                    "description": [
+                        "熟悉 `oracle` `mysql` 数据库，了解基本的数据库读取和删改操作",
+                        "了解 `HTTP`、 `TCP/IP`"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "miscellaneous",
+            "item": [
+                "了解 `terminal` 常用命令",
+                "熟悉 `Sublime Text` 及插件使用 ",
+                "了解`XSS` / `CSRF` 等基本的 `Web 安全`知识",
+                "工作使用 `Git`进行版本控制"
+            ]
+        }
+    ]
+}

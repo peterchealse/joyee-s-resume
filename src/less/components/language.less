@@ -1,0 +1,43 @@
+.language .sec-content {
+    margin: @padding-large-vertical 0 0 @timeline-icon-radius;
+}
+
+.language-certificates {
+    margin: 0;
+    padding: 0;
+}
+
+.language-cert-wrapper {
+    font-size: @font-size-large;
+    margin-bottom: @padding-small-vertical;
+    .float-container();
+}
+
+.language-cert-type {
+    float: left;
+    font-weight: bold;
+}
+
+.language-cert-wrapper .progress {
+    float: right;
+    width: 80%;
+    margin: 0;
+
+    @media (max-width: @screen-xs-max) {
+        float: none;
+        width: 100%;
+    }
+}
+
+.language-description {
+    padding-left: 0;
+    margin: @padding-large-vertical 0;
+}
+
+.language-desc-item {
+    list-style-type: none;
+    line-height: 1.4;
+}
+
+.set-section-icon(language, @fa-var-comments);
+.set-li-icon(language-desc-item, @fa-var-star);

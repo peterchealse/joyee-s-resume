@@ -1,0 +1,54 @@
+extends ./layout/resume-layout.jade
+include ./mixins/util.jade
+
+block education
+  +section("education", true)
+    each item in education
+      li.timeline-item(class="education-" + item.type)
+        h3.timeline-title
+          time.education-time #{item.start} ~ #{item.end}
+        dl.education-description.timeline-content
+          dt.education-name= item.name
+          dd.education-major= item.major + education_type[item.type]
+          each honor in item.honor
+            dd.education-honor!= highlight(honor)
+
+
+block language
+  +section("language", false)
+    each lang in language
+      +certificate(lang.certificate)
+      ul.language-description
+        each desc in lang.description
+          li.language-desc-item= desc
+
+
+block experience
+  +section("experience", true)
+    each item in experience
+      li.timeline-item(class="experience-" + item.type)
+        h3.timeline-title
+          span.experience-place= item.place
+          time.experience-time #{item.start} ~ #{item.end}
+        dl.experience-description.timeline-content
+          dt.experience-name= item.name + experience_type[item.type]
+          each desc in item.description
+            dd.experience-task!= highlight(desc)
+
+block skills
+  +section("skills", true)
+    each item in skills
+      li.timeline-item(class="skills-" + item.type)
+        h3.timeline-title
+          span.skills-type= skill_type[item.type]
+        +#{"skills_" + item.type}(item)
+
+
+block links
+    ul.links
+      each link in links
+        li.link
+          a(href=link.url)= link_type[link.type]
+
+block repo
+  p #[a(href="https://github.com/joyeecheung/resume") This resume] is created with Gulp, Less and Jade.

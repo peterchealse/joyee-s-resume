@@ -1,0 +1,73 @@
+@qrcode-size: 130px;
+
+.header-qrcode .qrcode-img {
+    width: @qrcode-size;
+    height: @qrcode-size;
+}
+
+header {
+    .float-container();
+    border-bottom: @border-divide;
+    padding-bottom: @padding-small-vertical;
+}
+
+.title {
+    float: right;
+    text-align: right;
+    margin: 0;
+
+    @media (max-width: @screen-xs-max) {
+      float: none;
+      text-align: center;
+    }
+}
+
+.title h1, .title h2 {
+    margin: @padding-small-vertical 0;
+    line-height: 1;
+}
+
+.title h1 {
+    padding: @padding-small-vertical 0;
+}
+
+.title h2 {
+    padding: @padding-small-vertical @padding-base-vertical;
+    color: @bright-color;
+    font-weight: normal;
+}
+
+.header-qrcode {
+    float: left;
+    margin: 0;
+}
+
+address {
+    .float-container();
+}
+
+header .contact {
+    float: left;
+    margin: 0;
+    padding-left: @padding-large-horizontal;
+    @media (max-width: @screen-xs-max) {
+      float: none;
+      margin-top: @padding-large-vertical;
+      padding-left: @padding-xs-horizontal;
+    }
+}
+
+header .contact li {
+    list-style-type: none;
+    font-style: normal;
+    line-height: 1.4;
+    font-size: @font-size-medium;
+    word-break: break-all;
+}
+
+.set-li-icon(contact-phone, @fa-var-phone);
+.set-li-icon(contact-email, @fa-var-envelope);
+.set-li-icon(contact-github, @fa-var-github-square);
+.set-li-icon(contact-sinaweibo, @fa-var-weibo);
+.set-li-icon(contact-blog, @fa-var-rss);
+.set-li-icon(contact-wechat, @fa-var-wechat);

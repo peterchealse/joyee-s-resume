@@ -1,0 +1,44 @@
+.fa-sec-icon(@content) {
+    .fa-icon(@sec-icon-size, @sec-icon-padding, @text-color);
+    content: @content;
+}
+
+section {
+    margin-top: @padding-huge-vertical;
+}
+
+.sec-title-wrapper {
+    .float-container();
+}
+
+.sec-title {
+    float: left;
+    padding: 0;
+    margin: 0 0 0 @padding-small-horizontal;
+    .float-container();
+}
+
+.sec-title-ch {
+    font-size: @font-size-large;
+    float: left;
+    font-weight: bold;
+}
+
+.sec-title-en {
+    font-size: @font-size-base;
+    float: left;
+    clear: left;
+    color: @bright-color;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.sec-title-wrapper::before {
+    .fa-sec-icon(@fa-var-github-square);  // catch-all
+}
+
+.set-section-icon(@section-name, @content) {
+    .@{section-name} .sec-title-wrapper::before {
+        content: @content;
+    }
+}

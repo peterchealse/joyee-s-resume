@@ -1,0 +1,77 @@
+mixin phone(number)
+  li.contact-phone&attributes(attributes)= number
+
+mixin email(addr)
+  li.contact-email&attributes(attributes)
+    a(href="mailto://" + addr)= addr
+
+mixin sinaweibo(data)
+  li.contact-sinaweibo&attributes(attributes)
+    a(href=data.url)= data.id
+
+mixin github(data)
+  li.contact-github&attributes(attributes)
+    a(href="https://github.com/" + data.id)= "https://github.com/" + data.id
+
+mixin blog(data)
+  li.contact-blog&attributes(attributes)
+    a(href=data.url)= data.url
+
+mixin qrcode(data)
+  img.qrcode-img(src=data.qrcode, alt=data.id)&attributes(attributes)
+
+mixin wechat(data)
+  li.contact-wechat&attributes(attributes)= data.id
+
+mixin responsive(mixin_name, data, res_class)
+  +#{mixin_name}(data)(class=res_class)
+
+mixin section(sec_class, timeline)
+  section(class=sec_class)
+    .sec-title-wrapper
+      h3.sec-title
+        span.sec-title-ch= section_names[sec_class].ch
+        span.sec-title-en= section_names[sec_class].en
+    if timeline
+      .timeline-wrapper
+        ul.sec-content.timeline
+          if block
+            block
+    else
+      .sec-content
+        if block
+          block
+
+
+mixin certificate(certificate)
+  dl.language-certificates
+    each cert in certificate
+      .language-cert-wrapper
+        dt.language-cert-type= cert.type
+        dd.progress.language-cert-score
+          .progress-bar(style="width: " + Math.floor(cert.score / cert.full * 100) + "%;")
+            span.progress-label= cert.score
+
+
+mixin skills_basic(item)
+  dl.skills-description.timeline-content
+    each skill in item.item
+      dt.skills-item-summary!= highlight(skill.summary)
+      each desc in skill.description
+        dd.skills-item-description
+          span!= highlight(desc)
+
+
+mixin skills_frontend(item)
+  +skills_basic(item)(attributes)
+
+
+mixin skills_backend(item)
+  +skills_basic(item)(attributes)
+
+
+mixin skills_miscellaneous(item)
+    ul.skills-description.skills-miscellaneous.timeline-content
+      each desc in item.item
+        li.skills-item-description
+          span!= highlight(desc)

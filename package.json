@@ -1,0 +1,28 @@
+{
+  "name": "kevin-resume",
+  "version": "1.0.0",
+  "description": "这是一个在线简历生成器，使用 Gulp, Less 和 Jade 写成，支持用 Gulp 发布到 Github Pages。",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kevinwang04@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kevinwang04/resume.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-gh-pages": "^0.5.1",
+    "gulp-jade": "^1.0.0",
+    "gulp-less": "^3.0.3",
+    "gulp-livereload": "^3.8.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-sourcemaps": "^1.5.2"
+  },
+  "bugs": {
+    "url": "https://github.com/kevinwang04/resume/issues"
+  },
+  "homepage": "https://github.com/kevinwang04/resume"
+}

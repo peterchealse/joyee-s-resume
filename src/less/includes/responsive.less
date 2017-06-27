@@ -1,0 +1,17 @@
+.invisible-lt-sm {
+    @media (min-width: @screen-md-min) {
+        display: block;
+    }
+    @media (max-width: @screen-sm-max) {
+        display: none;
+    }
+}
+
+.visible-lt-sm {
+    @media (min-width: @screen-md-min) {
+        display: none;
+    }
+    @media (max-width: @screen-sm-max) {
+        display: block;
+    }
+}

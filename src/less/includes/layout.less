@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+// Centered container element
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  padding: @padding-container-vertical @padding-container-horizontal;
+  @media (max-width: @screen-xs-max) {
+    padding: @padding-small-vertical @padding-small-horizontal @padding-container-horizontal @padding-small-horizontal;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+.column {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left: (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+    float: left;
+}
+
+.loop-grid-columns(@index) when (@index >= 0) {
+    .calc-grid-column(@index);
+    // next iteration
+    .loop-grid-columns(@index - 1);
+}
+
+.calc-grid-column(@index) {
+    .column-@{index} {
+        width: percentage((@index / @grid-columns));
+    }
+}
+
+.calc-grid-column(@index) when (@index > @grid-columns-breakpoint) {
+    .column-@{index} {
+        @media (max-width: @grid-float-breakpoint) {
+          width: 100%;
+          float: none;
+          padding: 0;
+        }
+    }
+}
+
+.calc-grid-column(@index) when (@index <= @grid-columns-breakpoint) {
+    .column-@{index} {
+        @media (max-width: @grid-float-breakpoint) {
+          width: percentage((@index / @grid-columns-breakpoint));
+        }
+    }
+}
+
+.loop-grid-columns(@grid-columns);
+
+.first {
+   padding-left: 0;
+}
+
+.last {
+   padding-right: 0;
+}
+
+.row {
+    margin-left: -0.1px;
+    margin-right: -0.1px;
+    overflow: hidden;
+}
+
+.float-container() {
+    overflow-y: hidden;
+    zoom: 1;
+}
